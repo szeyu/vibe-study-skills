@@ -3,6 +3,7 @@
 A collection of AI skills designed to supercharge your studying. These skills transform AI assistants into specialized study companions.
 
 ```mermaid
+%%{init: {'theme': 'neutral'} }%%
 mindmap
   root((Vibe Study Skills))
     Study Creation
