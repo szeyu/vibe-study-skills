@@ -2,6 +2,28 @@
 
 A collection of AI skills designed to supercharge your studying. These skills transform AI assistants into specialized study companions.
 
+```mermaid
+mindmap
+  root((Vibe Study Skills))
+    Study Creation
+      study-notes-creator
+      quiz-creator
+      flashcard-creator
+      summary-generator
+    Subject Tutors
+      chemistry-tutor
+      physics-tutor
+      math-tutor
+      computer-science-tutor
+      biology-tutor
+      economics-tutor
+    Study Helpers
+      exam-prep
+      problem-solver
+      concept-explainer
+```
+
+
 ## 🎯 Skills Overview
 
 ### Study Creation Skills
@@ -35,7 +57,52 @@ A collection of AI skills designed to supercharge your studying. These skills tr
 
 ### Installation
 
-Copy the `skills/` folder to your AI assistant's skills directory.
+You can install these skills directly into your AI assistant using the `skills` CLI:
+
+```bash
+npx skills add https://github.com/szeyu/vibe-study-skills
+```
+
+This will prompt you to select which skills you want to install.
+
+```bash
+➜  vibe-study-skills git:(main) ✗ npx skills add https://github.com/szeyu/vibe-study-skills.git
+
+███████╗██╗  ██╗██╗██╗     ██╗     ███████╗
+██╔════╝██║ ██╔╝██║██║     ██║     ██╔════╝
+███████╗█████╔╝ ██║██║     ██║     ███████╗
+╚════██║██╔═██╗ ██║██║     ██║     ╚════██║
+███████║██║  ██╗██║███████╗███████╗███████║
+╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝
+
+┌   skills 
+│
+◇  Source: https://github.com/szeyu/vibe-study-skills.git
+│
+◇  Repository cloned
+│
+◇  Found 13 skills
+│
+◆  Select skills to install (space to toggle)
+│  ◻ biology-tutor (Biology subject expertise for study notes,
+problem-solvin...)
+│  ◻ chemistry-tutor
+│  ◻ computer-science-tutor
+│  ◻ concept-explainer
+│  ◻ economics-tutor
+│  ◻ exam-prep
+│  ◻ flashcard-creator
+│  ◻ math-tutor
+│  ◻ physics-tutor
+│  ◻ problem-solver
+│  ◻ quiz-creator
+│  ◻ study-notes-creator
+│  ◻ summary-generator
+└
+```
+
+Select the skills you want to use
+
 
 ### Usage
 
@@ -46,29 +113,6 @@ Simply describe what you need:
 - *"Explain entropy like I'm 5"*
 - *"Make flashcards for organic chemistry reactions"*
 - *"Create a 1-week study plan for my calculus exam"*
-
----
-
-## 📁 Repository Structure
-
-```
-vibe-study-skills/
-├── skills/
-│   ├── study-notes-creator/    # Visual note creation
-│   ├── quiz-creator/           # Quiz generation
-│   ├── flashcard-creator/      # Anki-compatible cards
-│   ├── summary-generator/      # Content summarization
-│   ├── chemistry-tutor/        # Chemistry expertise
-│   ├── physics-tutor/          # Physics expertise
-│   ├── math-tutor/             # Mathematics expertise
-│   ├── computer-science-tutor/ # CS expertise
-│   ├── biology-tutor/          # Biology expertise
-│   ├── economics-tutor/        # Economics expertise
-│   ├── exam-prep/              # Exam preparation
-│   ├── problem-solver/         # Step-by-step solutions
-│   └── concept-explainer/      # Concept explanations
-└── README.md
-```
 
 ---
 
