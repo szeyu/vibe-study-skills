@@ -1,131 +1,54 @@
-# 📚 Vibe Study Skills
+# 📚 Obsidian Notes Creator
 
-A collection of AI skills designed to supercharge your studying. These skills transform AI assistants into specialized study companions.
-
-```mermaid
-%%{init: {'theme': 'neutral'} }%%
-mindmap
-  root((Vibe Study Skills))
-    Study Creation
-      study-notes-creator
-      quiz-creator
-      flashcard-creator
-      summary-generator
-    Subject Tutors
-      chemistry-tutor
-      physics-tutor
-      math-tutor
-      computer-science-tutor
-      biology-tutor
-      economics-tutor
-    Study Helpers
-      exam-prep
-      problem-solver
-      concept-explainer
-```
-
-
-## 🎯 Skills Overview
-
-### Study Creation Skills
-| Skill | Description |
-|-------|-------------|
-| [study-notes-creator](skills/study-notes-creator) | Create organized, visual study notes with diagrams |
-| [quiz-creator](skills/quiz-creator) | Generate quizzes with MCQ, True/False, and more |
-| [flashcard-creator](skills/flashcard-creator) | Create Anki-compatible flashcards |
-| [summary-generator](skills/summary-generator) | Condense materials into digestible summaries |
-
-### Subject Expert Skills
-| Skill | Topics Covered |
-|-------|----------------|
-| [chemistry-tutor](skills/chemistry-tutor) | Organic, Inorganic, Physical, Analytical |
-| [physics-tutor](skills/physics-tutor) | Mechanics, E&M, Thermodynamics, Modern Physics |
-| [math-tutor](skills/math-tutor) | Algebra, Calculus, Statistics, Linear Algebra |
-| [computer-science-tutor](skills/computer-science-tutor) | Algorithms, Data Structures, Big-O |
-| [biology-tutor](skills/biology-tutor) | Cell Biology, Genetics, Ecology, Evolution |
-| [economics-tutor](skills/economics-tutor) | Micro, Macro, Policy, International Trade |
-
-### Study Helper Skills
-| Skill | Description |
-|-------|-------------|
-| [exam-prep](skills/exam-prep) | Study schedules, review sheets, practice tests |
-| [problem-solver](skills/problem-solver) | Step-by-step problem solving with explanations |
-| [concept-explainer](skills/concept-explainer) | ELI5-style explanations with analogies |
+An AI skill for creating high-quality Obsidian study notes — with rich analogies, diagrams, and structured explanations that genuinely teach.
 
 ---
 
-## 🚀 Getting Started
+## What It Does
 
-### Installation
+The `obsidian-notes-creator` skill transforms source material (lecture slides, PDFs, textbooks, rough notes) into polished Obsidian markdown. It knows how to:
 
-You can install these skills directly into your AI assistant using the `skills` CLI:
+- Write **intuition-first** — motivation and analogy before formula
+- Apply **5 analogy patterns** (step-down, before/after contrast, object, pseudocode, direction-flip)
+- Choose the right **Mermaid diagram type** for each situation
+- Use **Obsidian callouts** purposefully (not decoratively)
+- Scale from a **single note** to a **multi-file topic set** with an index hub
+
+---
+
+## Installation
 
 ```bash
 npx skills add https://github.com/szeyu/vibe-study-skills
 ```
 
-This will prompt you to select which skills you want to install.
+---
 
-```bash
-➜  vibe-study-skills git:(main) ✗ npx skills add https://github.com/szeyu/vibe-study-skills.git
+## Usage
 
-███████╗██╗  ██╗██╗██╗     ██╗     ███████╗
-██╔════╝██║ ██╔╝██║██║     ██║     ██╔════╝
-███████╗█████╔╝ ██║██║     ██║     ███████╗
-╚════██║██╔═██╗ ██║██║     ██║     ╚════██║
-███████║██║  ██╗██║███████╗███████╗███████║
-╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝
+Just describe what you need:
 
-┌   skills 
-│
-◇  Source: https://github.com/szeyu/vibe-study-skills.git
-│
-◇  Repository cloned
-│
-◇  Found 13 skills
-│
-◆  Select skills to install (space to toggle)
-│  ◻ biology-tutor (Biology subject expertise for study notes,
-problem-solvin...)
-│  ◻ chemistry-tutor
-│  ◻ computer-science-tutor
-│  ◻ concept-explainer
-│  ◻ economics-tutor
-│  ◻ exam-prep
-│  ◻ flashcard-creator
-│  ◻ math-tutor
-│  ◻ physics-tutor
-│  ◻ problem-solver
-│  ◻ quiz-creator
-│  ◻ study-notes-creator
-│  ◻ summary-generator
-└
+- *"Create study notes from this lecture on contrastive learning"*
+- *"Turn these rough notes on MoCo into an Obsidian note with analogies"*
+- *"Organise my ML notes into a multi-file structure"*
+- *"Generate a note for self-supervised learning with diagrams and examples"*
+
+---
+
+## Skill Structure
+
+```
+skills/obsidian-notes-creator/
+├── SKILL.md
+└── references/
+    ├── components/         ← Obsidian syntax (callouts, diagrams, frontmatter, wikilinks)
+    ├── writing/            ← How to write content that teaches (analogies, examples, comparisons)
+    ├── structure/          ← When to split into multiple files, templates
+    └── quality-checklist.md
 ```
 
-Select the skills you want to use
-
-
-### Usage
-
-Simply describe what you need:
-
-- *"Create a quiz from my chapter 5 notes"*
-- *"Help me with this physics problem"*
-- *"Explain entropy like I'm 5"*
-- *"Make flashcards for organic chemistry reactions"*
-- *"Create a 1-week study plan for my calculus exam"*
-
 ---
 
-## 🤝 Contributing
+## License
 
-Feel free to:
-- Add new subject skills
-- Improve existing skill references
-- Suggest new study helper skills
-
----
-
-## 📄 License
-
-MIT License - See [LICENSE](LICENSE) for details.
+MIT — see [LICENSE](LICENSE)
