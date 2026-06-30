@@ -117,9 +117,9 @@ Double:    ═ ║ ╔ ╗ ╚ ╝
 ┌─────────────────────────────────────────┐
 │              TOPIC TITLE                │
 ├─────────────────────────────────────────┤
-│  Concept A      Concept B      Concept C│
-│     │               │              │   │
-│  [detail]        [detail]       [detail]│
+│  Concept A     Concept B     Concept C  │
+│     │              │             │      │
+│  [detail]       [detail]      [detail]  │
 └─────────────────────────────────────────┘
 ```
 
@@ -151,3 +151,57 @@ WITHOUT momentum:                WITH momentum:
   Encoder v2  →  z_B              Encoder v1.001 → z_B (still ~valid)
   z_A vs z_B: INCOMPARABLE        z_A vs z_B: COMPARABLE
 ```
+
+---
+
+## Embedded Visuals — SVG / PNG (data Mermaid can't draw)
+
+Mermaid and ASCII show **structure**. For **data with values** — heatmaps, charts,
+confusion matrices, annotated figures — generate a self-contained **SVG** (or PNG)
+and embed it. Renders natively in Obsidian, no plugin.
+
+```
+![[my-figure.svg|580]]      ← the |580 sets display width in px
+```
+
+Save figures to an assets folder (e.g. `99-assets/`). **Interactive JS does not
+render** in Obsidian — always export a static image.
+
+### Which tool for which visual
+| Need | Tool |
+|---|---|
+| Process / hierarchy / lifecycle | Mermaid |
+| Custom layout, before/after | ASCII or SVG |
+| **Values + colour** (heatmap, chart, matrix) | **SVG / PNG** |
+| Equations | LaTeX `$...$`, `$$...$$` |
+
+### Dark/light-mode rules (Obsidian won't recolour your SVG)
+- Transparent background — never paint a white/black rect.
+- Labels/axes in **mid-grey `#8a8a8a`** — readable on any theme (never `#333` or `#fff`).
+- Text on a coloured shape: white on dark tiles, near-black on light —
+  `'#fff' if 0.299*r+0.587*g+0.114*b < 140 else '#1f1f1f'`.
+
+### Generator skeleton
+```python
+W, H = 640, 400
+svg = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-family="sans-serif">']
+# append <rect>/<text>/<line>/<path> elements …
+svg.append('</svg>')
+open("99-assets/figure.svg", "w").write("\n".join(svg))
+```
+
+Pair every embedded figure with one sentence of prose naming **what to notice**.
+
+---
+
+## Mermaid Pitfalls — what breaks rendering
+
+| Mistake | Why it breaks | Fix |
+|---|---|---|
+| `\n` in a label | Mermaid prints `\n` literally — no line break | keep the label on one line, or use the backtick multiline form |
+| Numbered prefix `A[1. Step]` | the `1.` confuses the parser → error or blank diagram | drop the dot (`Step 1`), or quote it: `A["1. Step"]` |
+| Special chars `( ) : ; # ,` in a label | unbalanced/illegal tokens | quote the whole label: `A["f(x): cost"]` |
+| Brackets/quotes inside a label | parser sees them as syntax | quote the label, escape inner quotes |
+
+> Rule of thumb: if a node label has anything beyond **letters, spaces, and a
+> hyphen**, wrap it in `"…"` — and never number nodes with `1.` / `2.`.

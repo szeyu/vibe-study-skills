@@ -12,7 +12,7 @@ Transform source material into genuinely excellent study notes — with analogie
 ```mermaid
 flowchart LR
     A[Source Material] --> B[Understand & Extract]
-    B --> C{Single topic\nor multi-file?}
+    B --> C{Single topic or multi-file?}
     C -->|Single| D[Write Note]
     C -->|Multi| E[Plan Structure]
     E --> D
@@ -67,7 +67,7 @@ Use callouts to signal special content (warnings, analogies, tips, questions) �
 → [`references/components/callouts.md`](references/components/callouts.md) — all 13 types with a decision guide
 
 Choose the right diagram type for the content:
-→ [`references/components/diagrams.md`](references/components/diagrams.md) — Mermaid (6 types) + ASCII patterns
+→ [`references/components/diagrams.md`](references/components/diagrams.md) — Mermaid (6 types) + ASCII patterns + embedded SVG/PNG for data visuals
 
 Fill frontmatter with tags and date:
 → [`references/components/frontmatter.md`](references/components/frontmatter.md)
