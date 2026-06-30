@@ -16,6 +16,24 @@ The `obsidian-notes-creator` skill transforms source material (lecture slides, P
 
 ---
 
+## See It In Action
+
+Real notes produced by the skill, showing its three visual styles:
+
+**Embedded SVG — data figures** (a correlation-regime heatmap)
+
+![Correlation heatmap study note with an embedded SVG](assets/example-svg-heatmap.webp)
+
+**Mermaid — processes & cycles** (the CBR 4R model)
+
+![Study note with a Mermaid cycle diagram](assets/example-mermaid-cycle.webp)
+
+**ASCII + callouts — side-by-side contrast** (DFT vs DCT)
+
+![Study note with an ASCII side-by-side diagram and a callout](assets/example-ascii-compare.webp)
+
+---
+
 ## Installation
 
 ```bash
