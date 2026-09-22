@@ -1,115 +1,35 @@
-# Single Note Template
+# Single Notes
 
-Use this template when a topic fits comfortably in one file (roughly under 400 lines).
+Keep one coherent learning objective in a note. Length alone does not justify a split. Improve the existing headings when revising rather than forcing this template onto every file.
 
----
-
-## Full Template
+## Adaptable outline
 
 ```markdown
----
-tags:
-  - subject/topic
-date: YYYY-MM-DD
----
+# Topic
 
-# [Topic Title]
+One sentence explaining the topic's purpose or result.
 
-> **In a nutshell:** One sentence. What is this and why does it matter?
+## Core idea
 
-**Prerequisites:** [[prior-concept]] — what the reader needs to know first
-**See also:** [[related-note]] — where this leads next
+Explain the mechanism, then give the precise statement with assumptions.
+Define symbols and connect the formal statement to the explanation.
 
----
+## Worked example
 
-## Overview
+State the givens and goal, show the reasoning, interpret the answer,
+and check it independently.
 
-[Mermaid or ASCII diagram showing the big picture of this topic]
+## Limits and mistakes
 
----
+Explain a relevant failure case or common confusion.
 
-## [Section 1: Main Concept]
+## Check your understanding
 
-[Problem / motivation — what goes wrong without this?]
+Pose a question that tests reasoning.
 
-[Intuition — plain language, no symbols]
-
-> [!example] [Analogy title]
-> [Concrete analogy using Pattern 1–5 from writing/analogies.md]
-
-[Formal definition or formula]
-
-**Breaking it down:**
-| Symbol / Part | Meaning |
-|---|---|
-| ... | ... |
-
-**Why it works:** [Connect the formula back to the intuition]
-
----
-
-## [Section 2: Mechanism / Algorithm]
-
-[Step-by-step with a diagram if helpful]
-
-```
-Step 1: [action]
-Step 2: [action]
-Result: [outcome]
+**Answer:** Give the explanation visibly.
 ```
 
----
+Use only applicable sections. Add prerequisites, comparisons, a useful visual, or related links where they help. Omit empty headings and generic summaries. An analogy, diagram, summary table, and practice section are not mandatory in every note.
 
-## [Section 3: Comparison (if applicable)]
-
-| Dimension | This | Alternative |
-|---|---|---|
-| ... | ... | ... |
-
-**Key difference:** [One sentence summary]
-
----
-
-## Summary Table
-
-| Term | Definition | Example |
-|---|---|---|
-| [concept] | [brief] | [concrete] |
-
----
-
-## Common Pitfalls
-
-| Pitfall | Correct understanding |
-|---|---|
-| "[wrong belief]" | [correct explanation] |
-
----
-
-## Practice
-
-1. [Question]
-   > [!question]- Answer
-   > [Step-by-step answer]
-
-2. [Question]
-   > [!question]- Answer
-   > [Answer]
-
----
-
-## Related
-
-- [[note-a]] — [why it's related]
-- [[note-b]] — [why it's related]
-```
-
----
-
-## Notes on the Template
-
-- The **overview diagram** is mandatory. If you can't draw it in Mermaid, use ASCII.
-- The **in-a-nutshell** line forces you to understand the concept before writing about it.
-- **Common Pitfalls** should reflect actual mistakes — don't fabricate them.
-- **Practice** questions should use foldable callouts so the note can double as a study tool.
-- **Related** links should always have a reason next to them, not just a bare wikilink.
+A reference note can lead with definitions; a proof can lead with its claim and assumptions; a worked exercise can lead with its problem. Preserve that purpose while making the reasoning complete.

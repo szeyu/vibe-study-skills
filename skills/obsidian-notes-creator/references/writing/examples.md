@@ -1,109 +1,42 @@
-# Example Patterns
+# Examples and Diagnostic Practice
 
-Concrete examples are non-negotiable. Every concept needs at least one.
-This file defines the **structures** for writing good examples in study notes.
+Choose examples around the learning objective. A brief illustration can clarify a definition; a worked problem needs enough detail to reproduce its answer. Do not impose a line limit on reasoning.
 
----
+## Complete worked example
 
-## Pattern 1: Concept → Example → Variation
+Include:
 
-The most versatile pattern. Show the concept, apply it to a specific case, then twist one variable to deepen understanding.
+1. **Givens and goal:** all data, rules, initial values, units, and requested output.
+2. **Assumptions:** distinguish supplied facts from explicitly chosen illustrative values.
+3. **Method and applicability:** why this method applies and which conditions it needs.
+4. **Steps:** substitutions, intermediate results, and explanations at difficult transitions.
+5. **Result and interpretation:** precision, units, and what the answer means.
+6. **Independent check:** substitution, a residual with its limitations, bounds, an alternative calculation, or an executable assertion.
 
-```markdown
-## [Concept Name]
+Do not give a numeric fuzzy-system output without the rule base, membership functions, operators, and defuzzification convention needed to obtain it. Do not present an invented completion of a lecture problem as original source material.
 
-**Definition:** [Brief explanation]
+## Small reusable example
 
-**Example:**
-[Specific, concrete scenario with real numbers or names]
+For the illustrative equation $2x+3=11$, subtracting $3$ gives $2x=8$, hence $x=4$. Substitution gives $2(4)+3=11$. A variation $2x+3=12$ changes the answer to $4.5$; integer answers were not an assumption of the method.
 
-**Variation:**
-What if [one thing changes]? → [Different outcome and why]
-```
+Use exact values where practical and round only the final presentation. Label numerical approximations.
 
-**Real instance:**
-```markdown
-## Osmosis
+## Questions that reveal understanding
 
-**Definition:** Water moves from low to high solute concentration across a semipermeable membrane.
+- Which assumption permits this step?
+- What changes if one input, boundary condition, or query mode changes?
+- Where is the first invalid step in this attempted solution?
+- Which method applies here, and why does the alternative fail?
+- How can you independently check this answer?
 
-**Example:**
-A red blood cell placed in salt water (high solute outside) → water leaves the cell → cell shrinks (crenation).
+For core methods, include a normal case and a relevant boundary or failure case. For programs, examine actual outputs, ordering, multiplicity, termination, and applicable input modes; do not erase duplicate answers before checking whether they matter.
 
-**Variation:**
-What if the cell is placed in pure water? → Water floods in → cell swells → may burst (lysis).
-```
-
----
-
-## Pattern 2: Problem → Solution → Why It Works
-
-For algorithm steps, derivations, or exam-style problems.
+Answers are visible by default:
 
 ```markdown
-**Problem:** [Specific question or scenario]
+> [!question] Does a small residual guarantee small solution error?
 
-**Solution:**
-Step 1: [action]
-Step 2: [action]
-Result: [answer]
-
-**Why it works:** [The underlying principle that makes each step correct]
+**Answer:** Only with suitable conditioning information; explain or demonstrate the relevant bound.
 ```
 
-Use a foldable callout for solutions when the note doubles as practice material:
-```markdown
-> [!question]- Solution
-> Step 1: ...
-> Step 2: ...
-> Result: ...
-```
-
----
-
-## Pattern 3: Cross-Discipline Example Table
-
-For concepts that appear across subjects. Shows transferability.
-
-| Subject | Concept | Concrete Example | Variation |
-|---|---|---|---|
-| Biology | Osmosis | RBC in salt water → shrinks | In pure water → swells |
-| Physics | Momentum | Bowling ball vs tennis ball, same speed | Same mass, different speed? |
-| Economics | Supply/Demand | OPEC cuts oil → price rises | New oil discovered → price falls |
-| ML | Contrastive loss | Positive pair pulled closer | Negative pair pushed apart |
-
----
-
-## Pattern 4: Named Worked Example
-
-For complex derivations or multi-step proofs, give the example a title so it's referenceable.
-
-```markdown
-### Example: Why momentum encoder is needed
-
-Suppose the encoder updates by 10% per step (no momentum).
-
-After batch 1: encode image A → z_A (with encoder v1)
-After batch 2: encoder changes → z_B encoded with v2
-...
-After batch 100: z_A was encoded with a completely different network.
-z_A and z_100 are not comparable → the queue is useless.
-
-Conclusion: large encoder updates invalidate the queue.
-```
-
----
-
-## What Makes an Example Good
-
-- **Specific** — uses actual names, numbers, or concrete scenarios (not "some X")
-- **Short** — 3-6 lines; if longer, it's a worked problem, not an example
-- **Directly follows the concept** — not relegated to a later section
-- **Teaches something you couldn't see from the definition alone**
-- **Has a variation** that either confirms or surprises
-
-## What Makes an Example Bad
-
-- Circular: "For example, contrastive loss contrasts positives and negatives" (just restates the definition)
-- Too abstract: "For example, consider two vectors A and B" (no context)
-- Too long: becomes its own mini-lecture without a clear point
+Use collapsed solutions only when the user explicitly requests hidden-answer practice. Keep the substantive explanation beside its concept rather than moving it into an unrequested study guide.

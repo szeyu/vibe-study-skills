@@ -1,114 +1,18 @@
-# Intuition-First Writing
+# Intuition and Formal Reasoning
 
-The most common mistake in study notes is leading with the formula, definition, or algorithm — before the student knows *why it exists* or *what problem it solves*. This file defines the order to build understanding.
+For a new concept, a useful order is purpose → intuition → precise statement → worked application → limits. Adapt to the note: a formula reference can start with the formula; an exercise can start with its givens. Avoid repetitive introductory headings and forced analogies.
 
----
+## Mathematics that explains
 
-## The Golden Order
+- Use `$...$` inline and `$$...$$` for display mathematics, outside code fences. Use `aligned` for connected derivation steps where supported by the vault renderer.
+- Define symbols, domains, units, indexing, and conventions before they become ambiguous. Keep notation consistent across linked notes and figures.
+- State assumptions next to the result: continuity, differentiability, nonzero denominators, independence, or input modes as applicable.
+- Explain the non-obvious transition in a derivation. Distinguish equality, approximation, implication, and equivalence.
+- Separate an algorithm's stopping rule from a guarantee about the true answer. A small residual alone need not imply small solution error.
+- State what a theorem guarantees and what it does not. Provide a counterexample when it prevents a likely misconception.
 
-```
-1. Problem           — What goes wrong without this?
-2. Intuition         — What's the big-picture idea?
-3. Analogy           — Make it concrete (see writing/analogies.md)
-4. Formal definition — Now the formula/algorithm lands
-5. Confirmation      — "This is why the formula looks this way"
-```
+For example, $-\log p$ is decreasing for $p>0$, since its derivative is $-1/p$. Minimising it maximises $p$ over the same feasible set. If $p$ is a ratio whose numerator also appears in the denominator, do not treat those quantities as independently adjustable.
 
-Never open a concept with its definition. Open with its **motivation**.
+Explain parameter changes under explicit conditions. Call a setting “optimal” only with an objective, domain, and supporting derivation or evidence. Otherwise describe the tradeoff.
 
----
-
-## Practical Templates
-
-### For a new concept
-
-```markdown
-## [Concept Name]
-
-> **In a nutshell:** One sentence that gives the core idea without jargon.
-
-### The Problem It Solves
-
-[What goes wrong in the world without this concept? 2-3 sentences.]
-
-### Intuition
-
-[Big-picture explanation using plain language. No symbols yet.]
-
-### How It Works
-
-[Now introduce the mechanism, formula, or algorithm.]
-
-**Why the formula looks this way:**
-[Connect each part of the formula back to the intuition.]
-```
-
-### For a formula
-
-```markdown
-## [Formula Name]
-
-Plain-text version first:
-"[What the formula computes in plain English]"
-
-Formal version:
-$$[formula]$$
-
-Breaking it down:
-| Part | Meaning |
-|---|---|
-| [symbol] | [what it represents] |
-
-Why minimising/maximising this achieves the goal:
-[Step through the direction, e.g. "The -log flips the goal: minimising -log(x) = maximising x"]
-```
-
----
-
-## Specific Patterns
-
-### "Why does this formula push X and pull Y?"
-
-Walk through in three lines:
-```
-Minimising L
-  = Maximising the fraction        (negative log flips direction)
-  Fraction grows when:
-    numerator ↑  →  positive pair gets closer
-    denominator ↓  →  negative pairs get pushed away
-```
-
-### "Why does this design choice exist?"
-
-Open with the world **without** the design choice:
-```
-Without [X], the problem is: [concrete failure mode].
-With [X], [concrete improvement].
-```
-Then explain the mechanism.
-
-### "Why this number / threshold?"
-
-Show what happens at too-low and too-high values:
-```
-[Parameter] too low  →  [failure mode A]
-[Parameter] at optimum  →  [good outcome]
-[Parameter] too high →  [failure mode B]
-```
-This works for masking ratio, temperature, momentum, learning rate, etc.
-
----
-
-## Signals That Notes Are Formula-First (Bad)
-
-- The first thing after the heading is a LaTeX block
-- There's no "problem" or "motivation" section before the algorithm
-- Examples appear only at the end, as an afterthought
-- The student would need to already understand the concept to read the note
-
-## Signals That Notes Are Intuition-First (Good)
-
-- The first paragraph explains what the concept is trying to do
-- An analogy appears before any symbols
-- The formal definition comes with a "why it looks this way" explanation
-- A student with no background could read the first 3 paragraphs and get the gist
+An introductory explanation may omit technical detail temporarily, but must not contradict the formal statement that follows it.

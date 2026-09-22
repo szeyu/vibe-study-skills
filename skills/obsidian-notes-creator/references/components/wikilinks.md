@@ -1,84 +1,24 @@
-# Wikilinks & Embeds Reference
-
----
-
-## Basic Link Forms
+# Wikilinks and Embeds
 
 ```markdown
-[[Note Name]]                    Link to a note by name
-[[Note Name|Display Text]]       Link with custom label
-[[Note Name#Heading]]            Link to a specific heading
-[[Note Name#Heading|Label]]      Link to heading with custom label
-[[#Heading in same note]]        Anchor link within the same note
-[[Note Name#^block-id]]          Link to a specific block
+[[Note]]
+[[Note|Readable label]]
+[[Note#Heading]]
+[[#Heading in this note]]
+[[Note#^block-id]]
+![[Note#Heading]]
+![[assets/figure.svg|640]]
 ```
 
----
+Use links for prerequisites, related reasoning, and follow-up material. Give the connection in a few words when it is not obvious. Do not invent a prerequisite or force a Related section simply to meet a link quota.
 
-## Embeds (Inline Transclusion)
+## Resolution checks
 
-```markdown
-![[Note Name]]                   Embed entire note
-![[Note Name#Heading]]           Embed from a heading downward
-![[Note Name#^block-id]]         Embed a single block
-![[image.png]]                   Embed an image
-![[image.png|300]]               Embed image at 300px width
-```
+- Resolve against the actual vault root and current note location. Check path-qualified targets and assets, not just basenames.
+- If multiple notes share a basename, use enough of the path to identify the intended file. A bare `[[README]]` is risky in a multi-subject vault.
+- Check that referenced headings and block IDs actually exist. Preserve stable anchors when editing headings.
+- In Markdown table cells, escape the alias separator: `[[Note\|Label]]`.
+- Check regular Markdown links and image embeds as well as wikilinks. Ignore illustrative syntax inside code examples when auditing actual dependencies.
+- If an authorised rename is necessary, update incoming links and embeds too; do not rename as a cosmetic cleanup.
 
----
-
-## Block References
-
-Add a block ID at the end of a paragraph to make it linkable:
-
-```markdown
-The momentum encoder update ensures consistency across queue entries. ^moco-momentum
-
-Then link to it elsewhere:
-See [[19-self-supervised-learning#^moco-momentum]]
-```
-
----
-
-## When to Add Wikilinks
-
-| Situation | Do this |
-|---|---|
-| Mentioning a concept covered in another note | `[[note-name\|concept name]]` |
-| Referencing a prerequisite at the top | List under **Prerequisites:** heading |
-| Referencing follow-up material | List under **Related:** heading |
-| Embedding a shared diagram or table | `![[shared-note#diagram-section]]` |
-
----
-
-## Linking Strategy for Study Notes
-
-Every note should have at minimum:
-
-```markdown
-**Prerequisites:** [[prior-concept]] — why you need it
-**See also:** [[related-technique]] — where this leads
-```
-
-And a **Related** section at the bottom:
-```markdown
-## Related
-
-- [[prior-concept]] — foundation for this topic
-- [[next-concept]] — builds on this
-- [[example-note]] — worked examples
-```
-
----
-
-## Path Resolution
-
-Obsidian resolves links by note name, not file path.
-You don't need to write the full path — just the filename (without `.md`):
-
-```markdown
-[[19-self-supervised-learning]]       ✓ works
-[[UM/CV/concepts/19-self-supervised-learning]]  ✓ also works (explicit)
-```
-
-Use explicit paths only when two notes share the same name.
+Use section embeds for genuinely shared material. Avoid making readers jump among many files to follow one calculation, or transcluding entire notes where a concise link would suffice.

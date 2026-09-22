@@ -1,81 +1,19 @@
-# Frontmatter Reference
+# Frontmatter
 
-Obsidian reads YAML frontmatter at the top of every note (between `---` delimiters).
-It powers search, dataview queries, and the Properties panel.
+Follow the vault's existing property conventions. Preserve creation dates, aliases, tags, and user-maintained fields. Do not rewrite dates merely because a file was inspected or add metadata solely to make a note look finished.
 
----
-
-## Standard Block
+For a new note, a small block may be sufficient:
 
 ```yaml
 ---
 tags:
   - subject/topic
-  - concept
 date: YYYY-MM-DD
 ---
 ```
 
-Always include at minimum: `tags` and `date`.
+Replace the example date with the actual creation date. Add an updated date only if the vault uses it and the content changed substantively. A review status must reflect checks actually performed; creating a file does not justify `status: complete`.
 
----
+Use valid YAML at the start of the file. Quote wikilink property values, for example `prerequisites: ["[[Foundations]]"]`. Keep property types consistent across related notes. Add aliases only when they help find the note, and avoid introducing a competing tag taxonomy.
 
-## All Property Types
-
-| Type | YAML syntax | Example |
-|---|---|---|
-| Text | `key: value` | `status: in-progress` |
-| Number | `key: 4.5` | `difficulty: 3` |
-| Checkbox | `key: true` | `reviewed: false` |
-| Date | `key: 2024-01-15` | `date: 2024-06-11` |
-| Date + Time | `key: 2024-01-15T14:30:00` | `due: 2024-06-30T23:59:00` |
-| List (inline) | `key: [a, b, c]` | `tags: [cv, ssl, moco]` |
-| List (block) | multiline under key | see below |
-| Link | `key: "[[Other Note]]"` | `related: "[[18-repr]]"` |
-
-### Block list syntax
-```yaml
-tags:
-  - CV
-  - contrastive-learning
-  - MoCo
-```
-
----
-
-## Recommended Tags Pattern
-
-Use **hierarchical tags** with `/` to namespace by subject:
-
-```yaml
-tags:
-  - CV/concepts          # subject / folder-type
-  - CV/contrastive       # subject / sub-topic
-  - exam-prep            # cross-subject utility tag
-```
-
----
-
-## Full Example
-
-```yaml
----
-tags:
-  - CV/concepts
-  - self-supervised-learning
-  - contrastive-learning
-date: 2026-06-11
-status: complete
-difficulty: 3
-prerequisites:
-  - "[[18-representation-learning]]"
----
-```
-
----
-
-## Notes
-
-- Frontmatter **must be the first thing** in the file — no blank lines before the opening `---`.
-- Obsidian treats unknown keys as custom properties — they won't break anything.
-- `aliases` lets other notes link using different names: `aliases: ["SSL", "Self-Supervised"]`
+Cite sources beside the claims they support. Optional source metadata can complement those citations but does not replace page, section, or figure references when available.

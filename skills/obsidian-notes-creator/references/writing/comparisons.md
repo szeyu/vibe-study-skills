@@ -1,106 +1,17 @@
-# Comparison Patterns
+# Comparisons That Support Decisions
 
-When two or more things are related but different, comparisons prevent confusion and build deeper understanding. This file defines when and how to compare.
+Compare methods when a learner might confuse them or needs to choose between them. Use a sentence for one distinction and a table for multiple comparable dimensions.
 
----
+Useful dimensions include purpose, assumptions, inputs, output, guarantee, failure mode, and cost under a stated model. Prioritise the distinction that affects the learner's decision. Avoid unconditional checkmarks where the answer depends on conditions.
 
-## Rule: Compare as Early as Possible
+For example, bisection maintains a sign-changing bracket for a continuous function, whereas Newton iteration requires a usable derivative at each step and can fail from an unsuitable starting point. State Newton's local convergence assumptions before describing its convergence rate. “Faster” without these conditions is misleading.
 
-Don't wait until the end of a section to compare. If you're introducing B and A already exists in the notes, compare them immediately after introducing B.
+When possible, apply both methods to the same problem and stopping criterion. Explain why their behaviour differs. Separate measured runtime from asymptotic work and iteration counts.
 
----
+## Evidence discipline
 
-## Pattern 1: Side-by-Side Table
-
-The most common and readable format. Use whenever comparing 2+ things across multiple dimensions.
-
-```markdown
-| Dimension | Thing A | Thing B |
-|---|---|---|
-| [attribute 1] | ... | ... |
-| [attribute 2] | ... | ... |
-| [key difference] | ... | ... |
-```
-
-**Tips:**
-- Put the **most important distinguishing row last** (it's what the student remembers)
-- Use ✅ / ❌ for binary comparisons
-- Keep cells short — one concept per cell
-
-**Example:**
-| | MoCo | SimCLR |
-|---|---|---|
-| Encoders | Two (query + key) | One (shared) |
-| Key update | Momentum (no grad) | Backprop |
-| Negative source | Queue of past keys | Current batch |
-| Batch size needed | Moderate (256) | Large (4096+) |
-| Memory cost | Queue | Large batch |
-
----
-
-## Pattern 2: Hierarchy View
-
-For things that are generalisations of each other. Show the progression from most constrained to most general.
-
-```markdown
-[Most specific / constrained]
-  ↓  relaxes [constraint A]
-[Middle]
-  ↓  relaxes [constraint B]
-[Most general]
-```
-
-**Example:**
-```
-K-means      encoder = hard assignment (one-hot),  decoder = lookup table
-  ↓  relax: allow soft, continuous encoding
-PCA          encoder = linear projection,           decoder = linear projection back,  + orthogonality constraint
-  ↓  relax: allow nonlinear transforms + remove constraint
-Autoencoder  encoder = deep NN,                    decoder = deep NN,                 no constraint
-```
-
----
-
-## Pattern 3: Similarities + Key Difference
-
-After a table, always close with a plain-text summary of what they share and what truly separates them. The table shows details; this paragraph gives the mental model.
-
-```markdown
-**Similarities:** Both X and Y do [shared goal]. Both use [shared mechanism].
-
-**Key difference:** X [does A] while Y [does B]. This matters because [consequence].
-```
-
-**Example:**
-> **Similarities:** Both MoCo and SimCLR use the InfoNCE loss and data augmentation to create positive pairs.
->
-> **Key difference:** MoCo decouples the number of negatives from batch size (via queue + momentum encoder), while SimCLR requires a huge batch to have enough negatives. This makes MoCo more memory-efficient for the same number of negatives.
-
----
-
-## Pattern 4: Before / After (Same System, Different Config)
-
-For comparing the same concept under different parameter settings.
-
-```markdown
-| Setting | What happens | Why |
-|---|---|---|
-| [param] too low | [failure mode] | [reason] |
-| [param] optimal | [good outcome] | [reason] |
-| [param] too high | [different failure] | [reason] |
-```
-
-**Example — Masking ratio in MAE:**
-| Masking ratio | Transfer accuracy | Why |
-|---|---|---|
-| 10% (too low) | ~55% | Too easy — model copies neighbours |
-| 75% (optimal) | ~75% | Forces global reasoning |
-| 90% (too high) | ~66% | Too little context to reconstruct from |
-
----
-
-## When Not to Use a Table
-
-- When there's only **one** meaningful difference → use a sentence instead
-- When the cells would be > 1 line each → split into separate sections with headers
-- When the items are **not parallel** (different types of things) → tables imply they're comparable
+- Cite empirical numbers with the source and relevant setup, including dataset, metric, and configuration.
+- Label invented numbers as hypothetical; never present them as reported measurements.
+- Do not declare a universal best parameter from one experiment.
+- Draw a generalisation arrow only when the claimed inclusion is valid under stated constraints. Related methods need not form a hierarchy.
+- Summarise the practical decision if the table alone does not make it clear; avoid repeating every cell in prose.
