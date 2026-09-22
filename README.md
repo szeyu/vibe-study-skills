@@ -8,11 +8,11 @@ An AI skill for creating high-quality Obsidian study notes — with rich analogi
 
 The `obsidian-notes-creator` skill transforms source material (lecture slides, PDFs, textbooks, rough notes) into polished Obsidian markdown. It knows how to:
 
-- Write **intuition-first** — motivation and analogy before formula
-- Apply **5 analogy patterns** (step-down, before/after contrast, object, pseudocode, direction-flip)
-- Choose the right **Mermaid diagram type** for each situation
-- Use **Obsidian callouts** purposefully (not decoratively)
-- Scale from a **single note** to a **multi-file topic set** with an index hub
+- Write **intuition-first** explanations with complete worked examples
+- Use **analogies** where helpful, explaining their limits
+- Choose suitable **ASCII, Mermaid, or SVG visuals**, with white SVG backgrounds
+- Use **Obsidian callouts** purposefully, keeping solutions visible
+- Create or improve **single notes and topic sets**, preserving existing folders
 
 ---
 
@@ -62,11 +62,12 @@ skills/obsidian-notes-creator/
     ├── components/         ← Obsidian syntax (callouts, diagrams, frontmatter, wikilinks)
     ├── writing/            ← How to write content that teaches (analogies, examples, comparisons)
     ├── structure/          ← When to split into multiple files, templates
-    └── quality-checklist.md
+    ├── quality-checklist.md
+    └── verification.md
 ```
 
 ---
 
 ## License
 
-MIT — see [LICENSE](LICENSE)
+Apache License 2.0 — see [LICENSE](LICENSE)
