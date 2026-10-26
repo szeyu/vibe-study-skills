@@ -147,6 +147,8 @@ Correct, plain sentences can still look messy on the page. The most common probl
 | `- **Infinite lists.** take 5 [1..] gives [1,2,3,4,5]; only what you ask for is computed. See [[Laziness]].` | A table row: Feature \| Example → result \| Python equivalent \| Learn more |
 | Runs of `**Plain English:** …` / `**The fix:** …` paragraphs | The same small structure every time: code block, a one-line "What it means" callout, a "The fix" callout with code |
 | A wall of bold bullets under "Going deeper" | A table (Topic \| In short \| Learn more) or short `###` sub-headings |
+| One paragraph listing parallel ideas ("A recipe is…, a spreadsheet is…, a detective is…") | A table or a bullet per idea, so each can be compared at a glance |
+| An "In a nutshell" box written as one dense paragraph | One-sentence definition, then 2–4 short bullets or numbered steps |
 
 Rules:
 
@@ -156,6 +158,8 @@ Rules:
 - **Paragraphs of three or four short sentences** at most; numbered lists for steps.
 - **Repeated sections look identical.** If a note has five "mistake" entries, each uses the same layout.
 - **Bold** only the key term, never whole sentences.
+- **Parallel ideas never share a paragraph.** Two or more items of the same kind (analogies, options, steps, cases) → bullets or a table.
+- **Fine print stays short.** In Going deeper and other side sections, aim for about 15 words per table cell; cut background the reader does not need now.
 
 ## 15. Final pass: read it as the beginner
 
