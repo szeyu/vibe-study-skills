@@ -23,6 +23,8 @@ Apply relevant checks to the requested scope. A checklist is a review aid, not a
 - [ ] Fine print sits in a later section instead of interrupting the main explanation.
 - [ ] Notes of the same kind share the same shape; a folder has a guided reading path.
 - [ ] Practice questions test reasoning (predict, spot the bug, change one thing), ordered easy to hard.
+- [ ] No cramped bullets (label + explanation + code + link on one line); repeated sections share one layout; links come last.
+- [ ] Every self-check uses the same question callout with a nested, unfolded Answer callout.
 - [ ] A final read-through as the beginner found nothing they would have to scroll back for.
 
 ## Visuals and Obsidian

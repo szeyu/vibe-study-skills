@@ -120,6 +120,8 @@ Useful narration cues: "We do this because…", "Notice that…", "A common wron
 
 ## 12. Practice that makes the reader think
 
+Format every question the same way: a question callout with a nested green answer callout, never folded (see [callouts](../components/callouts.md)).
+
 Recall questions ("What is X?") test memory. Better types:
 
 | Type | Example |
@@ -136,7 +138,26 @@ Order the questions from easy to hard. Answers stay visible unless the user asks
 
 A pile of good notes is not yet a course. The index should open with a **Start here** table: the notes in reading order, each with "after this you will be able to…". Navigation lines (previous / next) inside each note should follow the same order. Number files in reading order when a sequence matters, and keep the numbering in step with the path.
 
-## 14. Final pass: read it as the beginner
+## 14. Lay out the page so the eye can find things
+
+Correct, plain sentences can still look messy on the page. The most common problem is cramming: one bullet holding a bold label, an explanation, inline code, a result and a link.
+
+| Messy | Clean |
+|---|---|
+| `- **Infinite lists.** take 5 [1..] gives [1,2,3,4,5]; only what you ask for is computed. See [[Laziness]].` | A table row: Feature \| Example → result \| Python equivalent \| Learn more |
+| Runs of `**Plain English:** …` / `**The fix:** …` paragraphs | The same small structure every time: code block, a one-line "What it means" callout, a "The fix" callout with code |
+| A wall of bold bullets under "Going deeper" | A table (Topic \| In short \| Learn more) or short `###` sub-headings |
+
+Rules:
+
+- When items share the same parts, use a **table**; keep cells short (at most two lines with `<br>`).
+- **One idea per bullet.** Put code and its result on their own line: `expr` → `result`, or a code block for definitions.
+- **Links go last** — end of the item, a "Learn more" column, or the Related section — never mid-explanation.
+- **Paragraphs of three or four short sentences** at most; numbered lists for steps.
+- **Repeated sections look identical.** If a note has five "mistake" entries, each uses the same layout.
+- **Bold** only the key term, never whole sentences.
+
+## 15. Final pass: read it as the beginner
 
 Before finishing, re-read each note as the reader from Section 1 and fix:
 
@@ -145,4 +166,5 @@ Before finishing, re-read each note as the reader from Section 1 and fix:
 - paragraphs with no example;
 - any place where the reader must scroll back to understand;
 - caveats interrupting the main explanation that could move to Going deeper;
-- a missing "why should I care" in the first few lines.
+- a missing "why should I care" in the first few lines;
+- any cramped bullet or label-paragraph run that should be a table or a repeated mini-structure (Section 14).

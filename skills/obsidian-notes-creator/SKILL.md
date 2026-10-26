@@ -35,7 +35,7 @@ For unfamiliar material, connect motivation and intuition to the formal statemen
 
 Write plainly: one idea per sentence, terms defined on first use, an example right after each claim, concrete cases before the general rule, and fine-print caveats moved to a later section rather than interrupting the main explanation.
 
-- [Teaching style](references/writing/teaching-style.md): reader-first writing, notation decoding, bridges from familiar ideas, common mistakes, consistent note shape, layering, practice types, and a final beginner read-through.
+- [Teaching style](references/writing/teaching-style.md): reader-first writing, notation decoding, bridges from familiar ideas, common mistakes, consistent note shape, layering, practice types, clean page layout, and a final beginner read-through.
 
 - [Intuition and mathematics](references/writing/intuition-first.md): symbols, assumptions, derivations, and limits.
 - [Analogies](references/writing/analogies.md): explicit mapping and where it breaks.
