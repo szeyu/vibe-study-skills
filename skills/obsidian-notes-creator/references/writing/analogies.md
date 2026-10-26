@@ -20,4 +20,8 @@ For a FIFO queue, a line of customers maps arrival to enqueue and serving the fr
 
 Avoid absolute claims such as “old representations are useless” or “slow updates guarantee comparability” when the actual effect is gradual or depends on conditions. Compression and learned representations can illustrate reconstruction, but they are not equivalent mechanisms.
 
+## Bridges from what the reader already knows
+
+Often the best "analogy" is not an everyday object but something the reader has already studied: a programming language they use, an earlier course, or familiar maths. Put the two side by side and name the difference explicitly, e.g. Python `list` vs NumPy array: one type per array, and `+` adds element by element. A useful format is: *habit you already have → what happens here → the right way here.* An unmarked difference makes a bridge misleading.
+
 Walk through signs, logarithms, and inverses as mathematics, not as an analogy. Check their domains and dependencies explicitly.

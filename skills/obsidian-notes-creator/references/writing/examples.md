@@ -15,6 +15,10 @@ Include:
 
 Do not give a numeric fuzzy-system output without the rule base, membership functions, operators, and defuzzification convention needed to obtain it. Do not present an invented completion of a lecture problem as original source material.
 
+### Narrate the thinking
+
+Explain why each step is taken, not only what it is: "The error went up, so the step was too big; halve the learning rate." Point out where a learner is likely to go wrong at that step. A worked example that only lists operations teaches arithmetic, not method.
+
 ## Small reusable example
 
 For the illustrative equation $2x+3=11$, subtracting $3$ gives $2x=8$, hence $x=4$. Substitution gives $2(4)+3=11$. A variation $2x+3=12$ changes the answer to $4.5$; integer answers were not an assumption of the method.
@@ -28,6 +32,8 @@ Use exact values where practical and round only the final presentation. Label nu
 - Where is the first invalid step in this attempted solution?
 - Which method applies here, and why does the alternative fail?
 - How can you independently check this answer?
+
+Prefer questions that make the reader think over recall questions: predict-then-check, spot the first wrong step, read notation aloud, change one input, or choose between two methods. Order practice from easy to hard. See [teaching style](teaching-style.md#12-practice-that-makes-the-reader-think).
 
 For core methods, include a normal case and a relevant boundary or failure case. For programs, examine actual outputs, ordering, multiplicity, termination, and applicable input modes; do not erase duplicate answers before checking whether they matter.
 

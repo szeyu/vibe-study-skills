@@ -10,6 +10,10 @@ Choose the representation that reveals the relationship. No note needs a diagram
 | Precise geometry, annotated mechanism, mathematical curve | SVG |
 | Formula or derivation | Rendered LaTeX in the note |
 
+## One job per visual
+
+Draw for the hardest idea in a note, or where a picture beats a paragraph (structure, flow, before/after). Use the same values as the worked example beside it so the reader can cross-check, and add one sentence: "Notice that…". One clear figure teaches more than several decorative ones.
+
 ## Semantic checks before styling
 
 Decide what the figure teaches and what evidence supports it. Match names, symbols, colours, and values to the note. For numerical figures, derive geometry from the same equations or data as the worked example. Label axes, units, domain, scale, and important points. Distinguish discrete samples from a continuous curve; distinguish a schematic from a calculated plot. Do not imply a guarantee through an arrow or a smooth curve unsupported by the method.

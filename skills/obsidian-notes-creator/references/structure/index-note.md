@@ -11,7 +11,10 @@ What this collection covers and what the reader should be able to do.
 
 ## Start here
 
-- [[Subject/Foundations|Foundations]] — notation and assumptions used throughout.
+| Note | After this you will be able to… |
+|---|---|
+| [[Subject/01 Foundations\|01 · Foundations]] | read the notation used throughout |
+| [[Subject/02 Method A\|02 · Method A]] | solve a basic problem by hand |
 
 ## Methods
 

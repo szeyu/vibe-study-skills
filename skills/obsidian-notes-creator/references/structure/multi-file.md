@@ -12,6 +12,8 @@ Start with the smallest structure that fits the material. Split when parts have 
 
 Follow the vault's naming conventions. Number files only if the vault uses numbers or a required reading sequence benefits from them. A flat collection of topic notes is often sufficient; concepts/techniques/examples/practice folders are optional, not a standard to impose.
 
+When the learner needs a sequence, give the folder a guided path: an ordered list in the hub with "after this you will be able to…" for each note, and previous/next lines in each note that follow the same order. If the user asks to reorder a numbered set, renumber the files and rewrite every link to them in one scripted pass, then confirm that every link still resolves. Add a beginner-level note (for example notation, setup, or "how to read this") when the existing notes assume knowledge the reader lacks.
+
 Update an existing hub if one provides navigation. Create a new hub only when the set needs an entry point. Use unambiguous link paths and add previous/next navigation only where a sequence exists.
 
 ## Coverage

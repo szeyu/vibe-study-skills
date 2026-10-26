@@ -12,6 +12,19 @@ Apply relevant checks to the requested scope. A checklist is a review aid, not a
 - [ ] Analogies have accurate mappings and explicit limitations, if used.
 - [ ] Empirical claims have sources and context; illustrative assumptions are labelled.
 
+## Reader experience
+
+- [ ] The intended reader and their prior knowledge were decided, and explanations build on that knowledge.
+- [ ] The first lines say what the topic is and why it matters.
+- [ ] Sentences are short, one idea each; every term is defined on first use; notation is read aloud in words.
+- [ ] Concrete cases come before the general rule; tools are built by hand before the shortcut where it helps understanding.
+- [ ] Each claim is followed closely by an example; no paragraph is purely abstract.
+- [ ] Likely misconceptions and common mistakes are shown with fixes.
+- [ ] Fine print sits in a later section instead of interrupting the main explanation.
+- [ ] Notes of the same kind share the same shape; a folder has a guided reading path.
+- [ ] Practice questions test reasoning (predict, spot the bug, change one thing), ordered easy to hard.
+- [ ] A final read-through as the beginner found nothing they would have to scroll back for.
+
 ## Visuals and Obsidian
 
 - [ ] Visuals have a specific teaching purpose and agree with the text and calculations.

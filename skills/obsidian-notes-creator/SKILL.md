@@ -5,13 +5,15 @@ description: Create, improve, and audit Obsidian study notes from lectures, PDFs
 
 # Obsidian Notes Creator
 
-Make notes accurate, understandable, and useful for solving unfamiliar problems. Match depth to the learner and the requested scope; decoration and length are not evidence of quality.
+Make notes accurate, easy for the intended reader to understand, and useful for solving unfamiliar problems. Match depth to the learner and the requested scope; decoration and length are not evidence of quality. Correct but hard-to-read notes are not finished.
 
 ## 1. Inspect and choose the mode
 
 - **Create:** identify the source, audience, prerequisites, and learning objectives before choosing a structure.
 - **Improve:** read existing notes, neighbouring notes, assets, and relevant vault instructions. Repair and deepen those files in place. Preserve filenames, folders, links, original dates, and useful author wording. Do not create a parallel study guide, rename files, or impose a new folder tree unless requested or necessary to the task.
 - **Audit:** report specific gaps with file references; do not silently rewrite an audit-only request.
+
+**Know the reader.** Before writing, state in one or two sentences who the reader is and what they already know (for example, "comfortable with Python and high-school algebra, new to this notation"). Build explanations on that knowledge. Ask the user when it is unclear and it would change the writing.
 
 For a folder-wide task, inventory every Markdown file first. Track each as unreviewed, reviewed unchanged, improved, or unresolved, with a short reason. A small selection of polished notes is a targeted pass, not a completed folder review. Keep this working record outside the notes unless requested.
 
@@ -30,6 +32,10 @@ Prioritise correctness, complete worked reasoning, and useful connections. Add a
 ## 3. Explain and demonstrate
 
 For unfamiliar material, connect motivation and intuition to the formal statement. Reference notes may lead with a definition; worked problems may lead with the question. No mandatory analogy or diagram quota.
+
+Write plainly: one idea per sentence, terms defined on first use, an example right after each claim, concrete cases before the general rule, and fine-print caveats moved to a later section rather than interrupting the main explanation.
+
+- [Teaching style](references/writing/teaching-style.md): reader-first writing, notation decoding, bridges from familiar ideas, common mistakes, consistent note shape, layering, practice types, and a final beginner read-through.
 
 - [Intuition and mathematics](references/writing/intuition-first.md): symbols, assumptions, derivations, and limits.
 - [Analogies](references/writing/analogies.md): explicit mapping and where it breaks.

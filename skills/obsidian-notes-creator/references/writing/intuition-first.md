@@ -16,3 +16,7 @@ For example, $-\log p$ is decreasing for $p>0$, since its derivative is $-1/p$. 
 Explain parameter changes under explicit conditions. Call a setting “optimal” only with an objective, domain, and supporting derivation or evidence. Otherwise describe the tradeoff.
 
 An introductory explanation may omit technical detail temporarily, but must not contradict the formal statement that follows it.
+
+## Layering for beginners
+
+Keep a condition next to the result when it changes the answer in normal use (for example, "only for $p>0$"). Move rarer conditions, proofs and implementation subtleties to a later **Going deeper** section, so the main explanation stays easy to follow. Read every symbol aloud in words the first time it appears; see [teaching style](teaching-style.md#5-teach-the-reader-to-read-the-notation).
