@@ -11,6 +11,7 @@ Apply relevant checks to the requested scope. A checklist is a review aid, not a
 - [ ] Relevant failure cases and diagnostic questions test understanding beyond recall.
 - [ ] Analogies have accurate mappings and explicit limitations, if used.
 - [ ] Empirical claims have sources and context; illustrative assumptions are labelled.
+- [ ] Every non-definitional number is tagged (reported), (own calculation), or (assumed); code outputs are pasted from a real run.
 
 ## Reader experience
 
@@ -30,6 +31,9 @@ Apply relevant checks to the requested scope. A checklist is a review aid, not a
 ## Visuals and Obsidian
 
 - [ ] Visuals have a specific teaching purpose and agree with the text and calculations.
+- [ ] Each diagram was replayed against the text: no impossible order, no number that disagrees with the worked answer.
+- [ ] Mermaid avoids reserved words as names (`end`, `opt`, `off`…), `$` in labels, and `;` in sequence notes.
+- [ ] SVG embeds use the same width as the rest of the vault.
 - [ ] SVGs use white backgrounds by default, dark readable labels, accessible descriptions, and existing asset locations.
 - [ ] Changed figures have been rendered and inspected at their intended display size, or that limitation is reported.
 - [ ] Mathematics renders; symbols and domains were checked separately from syntax.
@@ -44,4 +48,4 @@ Apply relevant checks to the requested scope. A checklist is a review aid, not a
 - [ ] Calculation checks, runtime tests, syntax checks, and visual inspections are reported distinctly.
 - [ ] Unresolved source gaps, unavailable tools, and remaining content issues are disclosed.
 
-Follow [verification.md](verification.md) for the checking workflow. No mandatory diagram count, analogy count, or line count substitutes for these checks.
+Run `scripts/check_notes.py` and follow [verification.md](verification.md) for the checking workflow. No mandatory diagram count, analogy count, or line count substitutes for these checks.

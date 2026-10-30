@@ -25,6 +25,20 @@ For the illustrative equation $2x+3=11$, subtracting $3$ gives $2x=8$, hence $x=
 
 Use exact values where practical and round only the final presentation. Label numerical approximations.
 
+## Say where every number comes from
+
+A reader can't tell a measured figure from a guess unless the note says so. Tag numbers that aren't plain definitions:
+
+| Tag | Use for | Example |
+|---|---|---|
+| (reported) | taken from a cited source | "~3 h halt (reported)" |
+| (own calculation) | derived in the note or by code | "8 Gb/s (own calculation)" |
+| (assumed) | an illustrative input chosen for the example | "200-byte messages (assumed)" |
+
+When a number comes from code, run the code and paste its actual output. Never write the output you expect. A short "Check the numbers in code" block under a worked example lets the reader re-run it.
+
+Currency in prose: Obsidian reads `$` as the start of maths. Write `\$40` or use the unit name (`USD 40`, `RM 5`); keep `$...$` for LaTeX only.
+
 ## Questions that reveal understanding
 
 - Which assumption permits this step?
@@ -40,9 +54,12 @@ For core methods, include a normal case and a relevant boundary or failure case.
 Answers are visible by default:
 
 ```markdown
-> [!question] Does a small residual guarantee small solution error?
-
-**Answer:** Only with suitable conditioning information; explain or demonstrate the relevant bound.
+> [!question] Q1 · Does a small residual guarantee small solution error?
+>
+> > [!success] Answer
+> > Only with suitable conditioning information; explain or demonstrate the relevant bound.
 ```
+
+Keep each answer to about three short sentences. A longer answer usually means the question should be split, or the explanation belongs in the note body.
 
 Use collapsed solutions only when the user explicitly requests hidden-answer practice. Keep the substantive explanation beside its concept rather than moving it into an unrequested study guide.

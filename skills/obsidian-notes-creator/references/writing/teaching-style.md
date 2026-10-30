@@ -20,7 +20,7 @@ Before writing, decide in one or two sentences who the reader is and what they a
 | Example right after each claim | "Stemming may conflate distinct words." | "Stemming may merge different words: *university* and *universe* both become *univers*." |
 | Bold a key term once, where it is defined | bolding every mention | **Learning rate** once, plain afterwards |
 
-Flag for rewriting: sentences over about 25 words, three or more technical terms in one sentence, and paragraphs with no example.
+Flag for rewriting: sentences over about 25 words, three or more technical terms in one sentence, and paragraphs with no example. Aim for at most three short sentences per paragraph and per Q&A answer; when it runs longer, split it or turn the parallel parts into a table.
 
 ## 3. Concrete before abstract
 

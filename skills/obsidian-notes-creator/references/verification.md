@@ -1,6 +1,13 @@
 # Verification Workflow
 
-Use existing vault tooling first. Keep temporary reports and extracted render inputs outside the notes. Do not add a parser, test framework, or dependencies merely to audit a Markdown folder.
+Use existing vault tooling first, then run the bundled checker:
+
+```bash
+python3 <skill-dir>/scripts/check_notes.py <folder>            # structure + links + Mermaid
+python3 <skill-dir>/scripts/check_notes.py <folder> --no-mermaid
+```
+
+It uses only the Python standard library, and renders Mermaid through `mmdc` when that is installed. It reports what it could not check. Keep temporary reports and extracted render inputs outside the notes. Do not add further dependencies to audit a Markdown folder.
 
 ## 1. Inventory and inspect
 
@@ -39,12 +46,12 @@ assert 2 * x + 3 == 11
 
 Adapt checks to the actual note: evaluate a claimed root in the original equation, integrate the specified membership function, or check that a plotted critical point lies on its curve. A residual is not an error bound without conditioning information.
 
-Run executable examples with the relevant runtime when available. Test meaningful input modes and failure cases. Report “reviewed, not executed” if a runtime is unavailable; do not imply that pseudocode inspection was execution.
+Run executable examples with the relevant runtime when available. Paste the real output into the note; if the output differs from the prose, fix the prose. Label every non-definitional number by its source (see [examples](writing/examples.md#say-where-every-number-comes-from)). Test meaningful input modes and failure cases. Report “reviewed, not executed” if a runtime is unavailable; do not imply that pseudocode inspection was execution.
 
 ## 4. Render checks
 
 - **LaTeX:** use the target Obsidian renderer when available. An installed compatible math renderer can flag syntax errors, but distinguish that from target-app validation and mathematical proof. Do not silently suppress unsupported-command errors.
-- **Mermaid:** render changed blocks with an available renderer and inspect the outputs. Keep an input-to-note mapping so failures can be fixed at their source. Report whether all blocks or only a sample were checked.
+- **Mermaid:** render changed blocks with an available renderer and inspect the outputs. Then replay each diagram against the text: a diagram can render and still show an impossible order or a number that disagrees with the worked answer. Keep an input-to-note mapping so failures can be fixed at their source. Report whether all blocks or only a sample were checked.
 - **SVG:** render and inspect each changed figure at its intended embed size. Confirm labels, contrast, clipping, arrows, axes, and plotted values. XML parsing alone is insufficient.
 
 Use portable tool discovery and existing dependencies. Do not bake one machine's runtime paths into a reusable workflow. When a required tool is unavailable, use an available alternative and describe its limits; never invent a passing result.

@@ -58,10 +58,12 @@ Just describe what you need:
 ```
 skills/obsidian-notes-creator/
 ├── SKILL.md
+├── scripts/
+│   └── check_notes.py      ← run on a folder: links, frontmatter, folded answers, Mermaid render
 └── references/
     ├── components/         ← Obsidian syntax (callouts, diagrams, frontmatter, wikilinks)
     ├── writing/            ← How to write content that teaches (analogies, examples, comparisons)
-    ├── structure/          ← When to split into multiple files, templates
+    ├── structure/          ← When to split into multiple files, templates (incl. scenario and case notes)
     ├── quality-checklist.md
     └── verification.md
 ```

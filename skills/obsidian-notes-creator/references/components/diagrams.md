@@ -33,15 +33,54 @@ front       back
 
 Use flowcharts for decisions, sequence diagrams for actor exchanges, and state diagrams for lifecycle transitions. Keep nodes short; put lengthy mathematics in the surrounding prose. Use stable identifiers and quote labels containing syntax-sensitive characters.
 
+In flowcharts, write a two-line label as a backtick string inside the quotes, with a real line break. It reads like the rendered node and also allows **bold** inside the label.
+
 ```mermaid
 flowchart TD
-    A["Check method assumptions"] --> B{"Conditions satisfied?"}
+    A["`Check method
+    assumptions`"] --> B{"`Conditions
+    satisfied?`"}
     B -->|Yes| C["Apply the method"]
     B -->|No| D["Choose another method"]
     C --> E["Check the result"]
 ```
 
+### Mermaid mistakes that break or distort a diagram
+
+Each of these either stops the diagram rendering or changes what it shows. Avoid them while writing; the renderer only catches some of them.
+
+| Mistake | What happens | Fix |
+|---|---|---|
+| A participant or node named `end`, `opt`, `alt`, `loop`, `par`, `off` (any capitalisation) | parsed as a keyword: the diagram fails or a block closes early | rename: `OffPeak`, `Optimizer`, `EndUser` |
+| `$` in a label | Obsidian may read it as inline maths | write the unit: `USD 40`, `RM 5` |
+| `;` inside a sequence-diagram `Note` | the note text is cut at the `;` | use a comma |
+| `_` inside a backtick label, such as `min_cluster_size` | renders as *italics* | use a plain quoted label, or write it with spaces |
+| backtick labels outside flowcharts | support varies by Mermaid version; often shown as raw text | plain text in sequence and state diagrams |
+| a `mermaid` block inside a callout | every line needs the `> ` prefix, including the fences | keep diagrams outside callouts when possible |
+
+Broken and fixed:
+
+```text
+sequenceDiagram                     sequenceDiagram
+    participant Off as Off-peak         participant OffPeak as Off-peak
+    Off->>Grid: charge                  OffPeak->>Grid: charge
+```
+
 Render using an available compatible Mermaid renderer, preferably the target Obsidian version. A successful external render does not establish compatibility with every Obsidian version. Inspect arrow direction, branch labels, crossings, and readability. Do not rely on syntax checking alone.
+
+**A diagram that renders can still be impossible.** Replay it step by step against the text: a git graph that cherry-picks a commit before it is created renders fine but teaches the wrong order. Check that every number, actor, and outcome in the diagram matches the note's own worked answer.
+
+## Recipe: "How it works, step by step"
+
+For a mechanism (an algorithm, a protocol, a data structure under change), one section with three views teaches more than scattered figures:
+
+| Part | Shows | Example (Raft leader election) |
+|---|---|---|
+| 1. Flowchart | the rule each actor follows | "timeout → become candidate → request votes → majority?" |
+| 2. Sequence or state diagram | who talks to whom over time, or the lifecycle | follower → candidate → leader states |
+| 3. Step table | the same run with the note's own toy numbers | term 1, node B times out first, gets 3 of 5 votes |
+
+Use one small example throughout the three parts, so the reader can trace a single run. When the mechanism is computable, run a toy version and paste its real trace into the table.
 
 ## SVG defaults
 
@@ -53,6 +92,7 @@ Render using an available compatible Mermaid renderer, preferably the target Obs
 - Include a meaningful `<title>` and `<desc>`, and a nearby Markdown sentence explaining what to notice. Do not rely on embedded accessibility metadata alone.
 - Keep SVG self-contained: no scripts, external fonts, or remotely loaded images. Escape generated XML text and attributes.
 - Reuse the existing asset folder and descriptive filenames. Embed with a resolvable path, for example `![[assets/queue.svg|640]]`, adjusted to the vault layout.
+- Use one embed width across a vault or folder. Read the width from neighbouring notes before adding an embed, and match it.
 
 Minimal static skeleton:
 

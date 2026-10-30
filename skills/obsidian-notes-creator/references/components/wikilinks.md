@@ -10,6 +10,8 @@
 ![[assets/figure.svg|640]]
 ```
 
+Use one image width throughout a vault: check the `|width` used in neighbouring notes and match it.
+
 Use links for prerequisites, related reasoning, and follow-up material. Give the connection in a few words when it is not obvious. Do not invent a prerequisite or force a Related section simply to meet a link quota.
 
 ## Resolution checks

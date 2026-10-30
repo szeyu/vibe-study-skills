@@ -28,6 +28,7 @@ Prioritise correctness, complete worked reasoning, and useful connections. Add a
 - [Single note](references/structure/single-note.md): adaptable content modules.
 - [Multi-file notes](references/structure/multi-file.md): ownership, granularity, and preservation.
 - [Index notes](references/structure/index-note.md): update existing navigation when needed.
+- [Scenario and case notes](references/structure/scenario-note.md): fixed shapes for system-design scenarios and real-event case studies.
 
 ## 3. Explain and demonstrate
 
@@ -53,6 +54,6 @@ Choose prose, a table, ASCII, Mermaid, or SVG according to what the reader needs
 
 ## 5. Verify and report honestly
 
-Use the [verification workflow](references/verification.md) and [quality checklist](references/quality-checklist.md). Verify calculations separately from rendering. Inspect generated figures at their intended embed size. Check changed links and assets.
+Run `scripts/check_notes.py <folder>` first: it checks frontmatter, links and embeds, folded answers, long paragraphs, and renders Mermaid when `mmdc` is installed. Then use the [verification workflow](references/verification.md) and [quality checklist](references/quality-checklist.md). Verify calculations separately from rendering. Tag every number by its source and paste real code output. Inspect generated figures at their intended embed size. Check changed links and assets.
 
 Report coverage, substantive improvements, checks actually run, and unresolved issues. Distinguish reviewed, executed, and rendered. Never claim exhaustive validation from samples, syntax checks, or file counts alone.
