@@ -37,6 +37,37 @@ A reader can't tell a measured figure from a guess unless the note says so. Tag 
 
 When a number comes from code, run the code and paste its actual output. Never write the output you expect. A short "Check the numbers in code" block under a worked example lets the reader re-run it.
 
+**When to add code.** Not every note needs code. Add it only when the reader gains something from running or changing it: real data to fetch, a calculation too long to do by hand, or a simulation. Concept notes (history, schools of thought, definitions, case studies) are better served by tables, worked numbers by hand, and diagrams. A "Work it by hand" table never needs code behind it. One firm exception: if the note quotes data you fetched (FRED, World Bank, an exchange API), include the code that fetches it and its real output, so the reader can rerun it.
+
+**Code layout.** When a note does have code, lay out every runnable block in three parts so a reader can see what it does at a glance:
+
+```python
+import pandas as pd
+
+# --- Constants ---
+FRED_CSV = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={}"
+SERIES = "UNRATE"  # US unemployment rate, %
+
+
+# --- Functions ---
+def fred(series_id):
+    """Download one FRED series, indexed by date."""
+    url = FRED_CSV.format(series_id)
+    return pd.read_csv(url, index_col=0, parse_dates=True)[series_id]
+
+
+# --- Run ---
+print(fred(SERIES).tail(3))
+```
+
+- Constants first: series IDs, URLs, windows, thresholds. No magic numbers in the run section.
+- Small functions, each with a one-line docstring.
+- Keep lines under about 80 characters: break long calls and f-strings over several lines.
+- A tiny toy block (under ~10 lines) can skip the banners.
+- In a multi-block note, define helpers once in the first block and start later blocks with `# Uses fred() from Step 2.`
+- When refactoring existing code, run old and new and require identical output; keep the pasted output.
+- Watch for gaps in data: dropping a missing month before `shift(12)` silently compares with 13 months ago.
+
 Currency in prose: Obsidian reads `$` as the start of maths. Write `\$40` or use the unit name (`USD 40`, `RM 5`); keep `$...$` for LaTeX only.
 
 ## Questions that reveal understanding

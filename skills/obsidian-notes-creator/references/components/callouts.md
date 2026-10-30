@@ -23,4 +23,6 @@ For likely misconceptions, a short warning in the form "You might think X — ac
 
 A callout without a folding marker stays visible. `[!question]-` is collapsed and `[!question]+` starts expanded but is still foldable. **Do not use either folding marker for answers or solutions by default.** Use the nested non-folding answer callout above so the answer is directly readable. Hidden-answer practice is an explicit opt-in.
 
+The one folded box by default is **Before you read** (`[!info]-`): it is a term lookup, not a solution, so folding keeps the note's opening short.
+
 Keep blockquote prefixes on all lines belonging to a callout, including blank lines and any embedded code fences. Avoid deeply nested callouts and wrapping entire notes in them.

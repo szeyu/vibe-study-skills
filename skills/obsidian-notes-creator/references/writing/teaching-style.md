@@ -81,13 +81,14 @@ Readers learn as much from what goes wrong as from what goes right. Every core n
 
 A predictable layout lets the reader spend effort on the content, not on finding their way around. A good default order:
 
-1. **In a nutshell**: one or two sentences; what it is and why it matters.
-2. **Why it exists**: the problem it solves, ideally a failure of the naive approach.
-3. **Core idea**: concrete case first, then the general statement.
-4. **Worked example**: step by step, with the thinking narrated (Section 10).
-5. **Common mistakes**.
-6. **Check yourself**: questions with visible answers.
-7. **Going deeper**: caveats, proofs, edge conditions, links onward.
+1. **Before you read**: a folded table of the terms the note assumes, linked to where they are taught.
+2. **In a nutshell**: one bold sentence, a small table of key results with real numbers, one closing sentence.
+3. **Why it exists**: the problem it solves, ideally a failure of the naive approach.
+4. **Core idea**: concrete case first, then the general statement.
+5. **Work it by hand**: one real number walked through the arithmetic in a table, before any code (Section 10).
+6. **Common mistakes**: a table, or one `[!caution] Common mistake` callout after the worked table.
+7. **Check yourself**: questions with visible answers.
+8. **Going deeper**: caveats, proofs, edge conditions, links onward.
 
 Adapt the order for reference notes and exercise collections, but keep it the same across notes of the same kind.
 
@@ -148,7 +149,7 @@ Correct, plain sentences can still look messy on the page. The most common probl
 | Runs of `**Plain English:** …` / `**The fix:** …` paragraphs | The same small structure every time: code block, a one-line "What it means" callout, a "The fix" callout with code |
 | A wall of bold bullets under "Going deeper" | A table (Topic \| In short \| Learn more) or short `###` sub-headings |
 | One paragraph listing parallel ideas ("A recipe is…, a spreadsheet is…, a detective is…") | A table or a bullet per idea, so each can be compared at a glance |
-| An "In a nutshell" box written as one dense paragraph | One-sentence definition, then 2–4 short bullets or numbered steps |
+| An "In a nutshell" box written as one dense paragraph | One bold sentence, then a small Measure/Result table (or 2–4 short bullets), then one closing sentence |
 
 Rules:
 

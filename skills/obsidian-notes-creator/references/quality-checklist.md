@@ -39,6 +39,10 @@ Apply relevant checks to the requested scope. A checklist is a review aid, not a
 - [ ] Mathematics renders; symbols and domains were checked separately from syntax.
 - [ ] Changed links, heading/block targets, and embeds resolve without ambiguity.
 - [ ] Answers and solutions are visible unless hidden practice was explicitly requested.
+- [ ] Notes that assume outside terms open with a folded **Before you read** table linking each term to where it is taught.
+- [ ] The **In a nutshell** box has a bold one-line takeaway, a small table of real results, and one closing sentence.
+- [ ] Each data-heavy note has a **Work it by hand** table and a common-mistake callout, using numbers already in the note.
+- [ ] Code appears only where running it teaches something; where it does, it follows the Constants / Functions / Run layout with lines under about 80 characters.
 - [ ] Existing layout, metadata, dates, and naming conventions are preserved appropriately.
 
 ## Completion
