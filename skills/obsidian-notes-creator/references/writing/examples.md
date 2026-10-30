@@ -68,6 +68,16 @@ print(fred(SERIES).tail(3))
 - When refactoring existing code, run old and new and require identical output; keep the pasted output.
 - Watch for gaps in data: dropping a missing month before `shift(12)` silently compares with 13 months ago.
 
+**Code a reader can rerun.** The code is the source of truth, so it must give any reader the same result:
+
+- Before the first code block, give a copyable run command that installs every library the code needs, e.g. `uv run --with <lib> --with <lib> python <note-name>.py`. If the note has several blocks, say to save them in order into one file.
+- Fetch straight from the original source. No local caches, saved snapshots or machine-specific paths.
+- Downloads have a timeout and fail with a plain message, not a traceback.
+- Keep missing data visible: align by date rather than row position, and say "n/a" when a value is missing instead of printing NaN or silently skipping it.
+- Data that keeps updating gets a fixed end date, so a rerun matches the pasted output.
+- Keys and passwords come from environment variables, never written into the note.
+- Label pasted output with its run date.
+
 Currency in prose: Obsidian reads `$` as the start of maths. Write `\$40` or use the unit name (`USD 40`, `RM 5`); keep `$...$` for LaTeX only.
 
 ## Questions that reveal understanding

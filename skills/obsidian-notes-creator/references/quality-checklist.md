@@ -43,6 +43,7 @@ Apply relevant checks to the requested scope. A checklist is a review aid, not a
 - [ ] The **In a nutshell** box has a bold one-line takeaway, a small table of real results, and one closing sentence.
 - [ ] Each data-heavy note has a **Work it by hand** table and a common-mistake callout, using numbers already in the note.
 - [ ] Code appears only where running it teaches something; where it does, it follows the Constants / Functions / Run layout with lines under about 80 characters.
+- [ ] Code notes have a copyable run command, downloads with timeouts, visible gaps, and no keys or local files in the code.
 - [ ] Existing layout, metadata, dates, and naming conventions are preserved appropriately.
 
 ## Completion
